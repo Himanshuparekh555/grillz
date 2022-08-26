@@ -1,0 +1,130 @@
+@import "../../../src/variables.scss";
+
+.booking_sec{
+    position: relative;
+    overflow: hidden;
+    padding: 390px 230px;
+    @include media-mobile-lg {
+        padding: 100px;
+    }   
+    @include media-mobile-md {
+        padding: 0 15px;
+    }   
+    &::before,&::after{
+        background-repeat: no-repeat;  
+        background-size: 100%;
+    }
+    &::before{
+        @include position(absolute, $top:0,$bottom:0,$left:-300px); 
+        background-image: url("../../images/pngtree-booking.png");        
+        width: 844px;
+        height: 1111px;
+        content: "";
+        z-index: 1;
+        margin: auto;
+        background-repeat: no-repeat;  
+        @include media-mobile-lg {
+            left: -145px;
+            width: 400px;
+            height: 530px;
+        }         
+        @include media-mobile-md {
+            width: 290px;
+            height: 385px;
+        }  
+        @include media-mobile-sm {
+            width: 187px;
+            height: 220px;
+        }       
+    }
+    &::after{
+        @include position(absolute, $right:-75px,$top:0,$bottom:0); 
+        background-image: url("../../images/cauliflower.png");
+        width: 265px;
+        height: 310px;
+        content: "";
+        margin: auto;    
+        @include media-mobile-md {
+            width: 220px;
+            height: 245px;
+        }  
+        @include media-mobile-sm {
+            width: 105px;
+            height: 109px;
+        }                 
+    }
+    
+    & .booking_block{
+        background-color: $white-color;
+        position: relative;
+        padding: 100px;
+        @include media-mobile-sm {
+           padding: 10px;
+        }  
+        &::after{
+            @include position(absolute, $right:-50px,$top:-50px); 
+            background-image: url("../../images/dots-bg1.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 315px;
+            height: 400px;
+            content: "";
+            z-index: -1;
+            margin: auto;
+            background-repeat: repeat;             
+        }
+        &::before{
+            @include position(absolute, $bottom:-60px,$left:0); 
+            background-image: url("../../images/dots-bg1.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 315px;
+            height: 400px;
+            content: "";
+            z-index: -1;
+            margin: auto;
+            background-repeat: repeat;             
+        }
+        & .search_box{
+            max-width: none;
+            & .primary-btn{
+                @include border-radius(0);
+                padding: 0;
+            }
+        }
+        & label{
+            color: $secondary-color;
+            font-weight: 600;
+            font-size: 18px;
+            display: flex;
+            align-items: end;
+            & svg{
+                fill: $red-color;
+            }
+            @include media-mobile-sm {
+                font-size: 14px;            
+            }   
+        }
+        & .datetimePicker{
+            & .MuiFormControl-root{
+                & input,& .MuiSelect-select{
+                    border: none;
+                    padding: 0;
+                    color: $secondary-color;
+                    font-size: 16px;
+                    font-family: $primary-font;
+                    cursor: pointer;
+                    opacity: 1;
+                    @include media-mobile-sm {
+                        font-size: 12px;  
+                        top: 0;          
+                    }   
+                }
+                & .MuiOutlinedInput-notchedOutline{
+                    border: none;
+                }
+                & svg{display: none;}
+            }
+        }
+    }
+}

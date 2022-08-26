@@ -1,0 +1,27 @@
+@import "../../variables.scss";
+
+.location{
+    @include position(fixed,$left:0,$bottom:50px,);
+    @include border-radius(0 100px 100px 0);
+    background-color: $primary-color;
+    width: 230px;
+    height: 88px;
+    z-index: 99;
+    & span{
+        font-weight: 500;
+        font-size: 31px;
+        color: $white-color;
+        padding-left: 24px;
+        @include media-mobile-md {
+            font-size: 14px;
+            padding-left: 13px;
+        }   
+    }
+    @include media-mobile-md {
+        width: 100px;
+        height: 40px;
+        & svg{
+            width: 14px;
+        }
+    }    
+}

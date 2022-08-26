@@ -1,0 +1,50 @@
+@import "../../../src/variables.scss";
+.app_sec{
+    background-color: $gray-color-light;
+    & .row{
+        align-items: center;
+        justify-content: space-between;
+        @include media-mobile-md {
+            justify-content: center;
+        }    
+        & .subtitle{
+            padding-left: 96px;
+            @include media-mobile-sm {
+                padding-left: 50px;
+            } 
+        }   
+        & .download-btn{
+            padding-left: 96px;
+            padding-top: 20px;
+            @include media-mobile-sm {
+                padding-left: 50px;
+            }   
+        }
+        & .app-screen{
+            position: relative;
+            z-index: 1;
+            &::after{
+                @include position(absolute, $left:20px,$top:150px); 
+                background-image: url("../../images/dots-bg1.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 280px;
+                height: 400px;
+                content: "";
+                z-index: -1;
+                margin: auto;
+                background-repeat: repeat;             
+            }
+            &::before{
+                @include position(absolute, $left:-65px,$top:0,$bottom:0); 
+                background-image: url("../../images/cauliflower.png");
+                background-size: 100%;
+                width: 290px;
+                height: 336px;
+                content: "";
+                z-index: -1;
+                margin: auto;                   
+            }
+        }
+    }
+}

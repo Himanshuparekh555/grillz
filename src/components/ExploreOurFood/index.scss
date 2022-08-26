@@ -1,0 +1,36 @@
+@import "../../../src/variables.scss";
+
+.explore_sec{
+    & .subtitle{
+        font-size: 16px !important;
+    }
+    & .itemCard{
+        @include box-shadow(0px 17px 16px #EBF1F58C);
+        & .name{
+            color: $secondary-color-dark;
+            font-size: 18px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        & .price{
+            color: $primary-color;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        & .des{
+            font-family: $primary-font;
+            color: $gray-color-medium;
+            font-size: 14px;
+            line-height: 22px;
+            font-weight: 400;
+            display: inline;
+            -webkit-line-clamp: 2;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            word-wrap: break-word;
+        }
+    }
+}

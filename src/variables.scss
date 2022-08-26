@@ -1,0 +1,51 @@
+/* ====== Variables ======== */
+
+/* Mixin */
+@import "../src/mixy-sass/mixy";
+@import "../src/mixy-sass/setting";
+
+
+/* Fonts */
+$primary-font: "Poppins", sans-serif;
+$footer-links-font:'Montserrat', sans-serif;
+
+/* Colors */
+$primary-color: #3d7475;
+$secondary-color:#2e266f;
+$secondary-color-dark: #0C3653;
+$white-color:#fff;
+$black-color:#000000;
+$green-color:#1c443c;
+$gray-color: #707070;
+$gray-color-medium:#AEB2B4;
+$gray-color-light:#FAFAFA;
+$red-color:#FE043C;
+$box-shadow:#FF707029;
+
+
+// Media Queries
+@mixin media-dektop {
+    @media screen and (min-device-width: 1200px) and (max-device-width:1920px) { 
+        @content;
+    }
+}
+@mixin media-mobile-lg {
+    @media screen and (max-width : 1200px) {
+        @content;
+    }
+}
+@mixin media-mobile-md {
+    @media screen and (max-width : 992px) {
+        @content;
+    }
+}
+@mixin media-mobile-sm {
+    @media screen and (max-width : 600px) {
+        @content;
+    }
+}
+@mixin media-mobile-xs {
+    @media screen and (max-width : 470px) {
+        @content;
+    }
+}

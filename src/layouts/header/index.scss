@@ -1,0 +1,69 @@
+@import "../../../src/variables.scss";
+
+/* Header */
+header{
+    @include position(absolute, $top:0,$right:0,$left:0);
+    @include transition(all 400ms ease 0s);
+    padding: 10px 0;
+    @include media-dektop{
+        z-index: 9;
+    }
+    & .nav-drawer {
+        & svg{
+            fill:$primary-color;
+        }
+    }
+    & .logo{
+        width: 167px;
+        @include media-mobile-xs {
+            width: 100px;
+        }
+    }
+    & .nav{
+        @include transition(all 400ms ease 0s);       
+        & ul{     
+            display: flex;        
+            & li{
+                color: $secondary-color;
+                font-weight: 500;
+                font-family: $primary-font;
+                background: none !important;
+                @include media-mobile-lg {
+                    padding: 20px 30px;
+                }
+            }   
+            @include media-mobile-lg {   
+                display: block;
+             }         
+        }       
+        @include media-mobile-lg {            
+            background-color: $white-color;
+            @include position(fixed,$top:0,$left:-250px,$bottom:0);
+            width: 250px;
+            z-index: 999;
+            &.active{
+                left: 0;
+            }
+        }   
+    }
+    & .user_profile{
+        font-family: $primary-font;
+        font-weight: 500;
+        color: $white-color;
+        position: relative;
+    }
+}
+.overlay{
+    @include transition(all 400ms ease 0s);
+    background: rgba(0,0,0,0.8);
+    @include position(fixed,0,0,0,0);
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    opacity: 0;
+    visibility: hidden;
+    &.active{
+        opacity: 1;
+        visibility: visible;
+    }
+}

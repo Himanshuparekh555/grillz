@@ -1,0 +1,168 @@
+@import "../../../src/variables.scss";
+
+/* Slider */
+.main_slider{
+    position: relative;
+    padding: 50px 0;
+    @include media-mobile-md {
+        padding-top: 75px;
+        position: static;
+    }
+    &::after{
+        @include position(absolute, $top:0,$right:0,$bottom:0);
+        content: "";
+        background-color: $primary-color;
+        width: 557px;     
+        z-index: -1;
+        @media screen and (min-width: 2100px) {
+            width: 32%;   
+        }
+        @media screen and (min-width: 2500px) {
+            width: 36%;   
+        }
+        @media screen and (min-width: 3000px) {
+            width: 40%;   
+        }
+        @media screen and (min-width: 4000px) {
+            width: 44%;   
+        }
+        @include media-mobile-lg {
+            width: 50%;
+            width:calc(100% - 50%);
+            height: 1150px;
+        }
+        @include media-mobile-md {
+            height: 1065px;
+        } 
+        @include media-mobile-sm {
+            height: 670px;
+        } 
+    }
+    & .each-slide{
+        & .slider-content{
+            & .text{
+                color: $secondary-color;
+                font-family: $primary-font;
+                font-size: 72px;
+                font-weight: 700;
+                text-align: left;
+                @include media-mobile-sm {
+                    font-size: 45px;
+                } 
+            }
+        }
+        & .food-svg{
+            @include media-mobile-sm {
+               width: 80%;
+            } 
+        }
+        & .img{
+            position: relative;
+            padding: 75px 0 40px 0;
+            z-index: 1;
+            @include media-mobile-lg {
+                height: 1000px;
+            }
+            @include media-mobile-md {
+                height: 900px;
+            } 
+            @include media-mobile-sm {
+                height: 545px;
+            } 
+            &::after{
+                @include position(absolute, $top:0,$right:0,$left:0); 
+                background-image: url("../../images/pngtree.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 390px;
+                height: 500px;
+                content: "";
+                z-index: -1;
+                margin: auto;      
+                @include media-mobile-sm {
+                   background-size: 100%;
+                   width: 240px;
+                   height: 350px;
+                }           
+            }
+            &::before{
+                @include position(absolute, $top:0,$left:0,$bottom:0); 
+                background-image: url("../../images/dots-bg1.png");
+                background-repeat: no-repeat;
+                background-size: 100%;
+                width: 370px;
+                height: 685px;
+                content: "";
+                z-index: -1;
+                margin: auto;
+                background-repeat: repeat;      
+                @include media-mobile-lg {
+                  display: none;
+                }
+            }
+        }
+    }
+    & .nav{
+        @include position(absolute,$bottom:35px,$right:0);     
+        z-index: 1;
+        @include media-mobile-lg {
+            top: 60%;
+            bottom: auto;
+        } 
+        @include media-mobile-sm {
+            top: 42%;
+        } 
+        &.default-nav{
+            background:none;
+            @include border-radius(0);
+            width: 86px;
+            height: 50px;
+            & svg{display: none;}
+            &:hover,&:focus{background: none;}
+            &::after,&::before{width: 70px;}
+            &:first-of-type{
+                background-image: url("../../images/left-arrow.svg");
+                right:135px;
+                left: auto;
+                margin-right: 0;
+                @include media-mobile-sm {
+                    right: 65px;
+                } 
+            }
+            &:last-of-type{
+                background-image: url("../../images/right-arrow.svg");
+            }
+            &:first-of-type,&:last-of-type{
+                @include media-mobile-sm {
+                    background-size: 100%;
+                    width: 50px;
+                    height: 29px;
+                } 
+            }
+           
+        }
+    }
+}
+.search_box{
+    position: relative;
+    padding:10px;
+    max-width: 650px;
+    background-color: $white-color;
+    @include box-shadow(0px 3px 50px $box-shadow);
+    & .MuiOutlinedInput-notchedOutline{border: none;}
+    & .MuiInputBase-root{
+        padding: 14px 20px !important;
+        & input{
+            color: $secondary-color;
+            font-size: 18px;
+        }
+    }
+    & .primary-btn{
+        width: 200px !important;
+        @include border-radius(82px 0 0 0);
+        @include media-mobile-sm {
+            font-size: 20px !important;
+            width: 100px !important;            
+        }   
+    }
+}
